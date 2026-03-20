@@ -1,0 +1,51 @@
+In the BusinessLogic folder, create an interface called IBusinessLogic.
+All methods will return a Task of the given type.
+Methods:
+- HasTargets
+    - Parameter: userId (int)
+    - Return type: bool
+- GetAssetTypes
+    - Return type: IEnumerable of AssetTypeDto
+- SaveTargets
+    - Parameters:
+        - userId (int)
+        - targets (IEnumerable of type TargetSaveDto)
+    - Return type: bool
+- GetBalanceSheetList
+    - Parameters:
+        - userId (int)
+        - count (int)
+    - Return type: IEnumerable of BalanceSheetListItemDto
+- GetLiabilityChart
+    - Parameters:
+        - userId (int)
+        - count (int)
+    - Return type: IEnumerable of LiabilityChartDto
+- GetNetWorthChart
+    - Parameters:
+        - userId (int)
+        - count (int)
+    - Return type: IEnumerable of NetWorthChartDto
+- GetDetails
+    - Parameters:
+        - userId (int)
+        - balanceSheetId (int)
+    - Return type: DetailsDto
+- GetBalanceSheetForCreate
+    - Parameter: userId (int) 
+    - Return type: BalanceSheetGetCreateDto
+- CreateBalanceSheet
+    - Parameters:
+        - userId (int)
+        - balanceSheet (BalanceSheetCreateDto)
+    - Return type: int
+- GetBalanceSheetForEdit
+    - Parameters:
+        - userId (int)
+        - balanceSheetId (int)
+    - Return type: BalanceSheetGetEditDto
+- EditBalanceSheet
+    - Parameters:
+        - userId (int)
+        - balanceSheet (BalanceSheetEditDto)
+    - Return type: bool
