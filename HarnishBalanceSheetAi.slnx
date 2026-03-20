@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="harnishbalancesheetai.client/harnishbalancesheetai.client.esproj">
+    <Build />
+    <Deploy />
+  </Project>
+  <Project Path="HarnishBalanceSheetAi.Server/HarnishBalanceSheetAi.Server.csproj" />
+</Solution>
