@@ -1,0 +1,15 @@
+Create an API controller in the Controllers folder called AuthController. Its route shall be api/auth/. The IRepository interface and
+IConfiguration interface shall
+be injected through the constructor. The controller shall have 1 method, Login. Its route shall be /login. The HTTP verb shall be Post.
+It shall be an async method and shall return a value of Task<JsonResult>. The method shall retrieve an email and password from the Post
+body. It shall call the IRepository's GetUser method asynchronously, passing in the email as a parameter. If the User object received
+from the GetUser method is null, the Login method shall return a 401 response. If the User object is not null, then the Login method shall
+use BCrypt.Net.BCrypt.Verify method, passing in the password from the request body, and the PasswordHash property of the User object.
+If the Verify method returns true, then the Login method shall create a new array of System.Security.Claim. The array shall have 1 Claim
+with type UserId and value UserId taken from the User object.
+The Login method shall create a new Microsoft.IdentityModel.Tokens.SymmetricSecurityKey, passing
+in the Jwt:Key string taken from the IConfiguration interface. Using the key, the Login method shall create new Microsoft.IdentityModel.Tokens.SigningCredentials.
+Then the Login method shall create a new System.IdentityModel.Tokens.Jwt.JwtSecurityToken, passing in the Jwt:Issuer taken from the IConfiguration,
+the Jwt:Audience taken from the IConfiguration, the Claims array, an expiration of 2 hours after present, and the created SigningCredentials.
+Then the Login method shall return the created token as part of an Ok response. If the Verify method returns false, then the Login method
+shall return a 401 response.
