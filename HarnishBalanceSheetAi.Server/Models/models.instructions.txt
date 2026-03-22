@@ -51,3 +51,7 @@
     - PreciousMetalId int
     - NumberOfOunces decimal
     - PricePerOunce decimal
+- Details:
+    - BalanceSheet BalanceSheet
+    - AssetTypes ICollection<AssetType>
+    - PreciousMetals ICollection<PrecionsMetal>

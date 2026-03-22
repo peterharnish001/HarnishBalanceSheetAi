@@ -1,0 +1,53 @@
+Create an interface IRepository. All methods shall return a Task. Methods:
+- GetUser
+    - Parameter: email string
+    - Return type: Models.User
+- HasTargets
+    - Parameter: userId int
+    - Return type: bool
+- GetAssetTypes
+    - Return type: IEnumerable of AssetType
+- SaveTargets
+    - Parameters:
+        - userId int
+        - Targets IEnumerable<Target>
+    - Return type: bool
+- GetBalanceSheetList 
+    - Parameters:
+        - userId int
+        - count int
+    - Return type: IEnumerable<BalanceSheetListItem>
+- GetLiabilityChart
+    - Parameters:
+        - userId int
+        - count int
+    - Return type: IEnumerable<LiabilityChartItem>
+- GetNetWorthChart
+    - Parameters:
+        - userId int
+        - count int
+    - Return type: IEnumerable<NetWorthChartItem>
+- GetDetails
+    - Parameters:
+        - userId int
+        - balanceSheetId int
+    - Return type: Details
+- GetBalanceSheetForCreate
+    - Parameters:
+        - userId int
+    - Return type: Details
+- CreateBalanceSheet
+    - Parameters:
+        - userId int
+        - balanceSheet BalanceSheet
+    - Return type: int
+- GetBalanceSheetForEdit
+    - Parameters:
+        - userId int
+        - balanceSheetId int
+    - Return type: Details
+- EditBalanceSheet
+    - Parameters:
+        - userId int
+        - balanceSheet BalanceSheet
+    - Return type: bool
