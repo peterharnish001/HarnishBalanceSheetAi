@@ -1,0 +1,68 @@
+Create an API controller called BalanceSheetController. It shall require authorization. Its route shall be /api/balance-sheet. 
+IBusinessLogic shall be injected via the constructor. All methods are to be async. All methods are to return a type of Task<JsonResult>.
+The property UserId (int) shall be taken from the logged-in User's "UserId" claim. All calls to the IBusinessLogic interface shall 
+use the await keyword.
+Methods:
+- HasTargets
+    - HTTP Verb: Get
+    - Route: has-targets
+    - Return type: bool
+    - Body: Calls IBusinessLogic's HasTargets method
+- GetAssetTypes
+    - HTTP Verb: Get
+    - Route: asset-types 
+    - return type: IEnumerable of AssetTypeDto
+    - Body: Calls IBusinessLogic's GetAssetTypes method
+- SaveTargets
+    - HttpVerb: Post
+    - Route: targets
+    - return type: bool
+    - Parameter: IEnumerable of TargetSaveDto, from HTTP request body
+    - Body: Calls IBusinessLogic's SaveTargets method
+- GetLiabilityChart
+    - HttpVerb: Get
+    - Route: liability-chart
+    - return type: IEnumerable of LiabilityChartDto
+    - Query string parameter: count (int)
+    - Body: Calls IBusinessLogic's GetLiabilityChart method
+- GetBalanceSheetList
+    - HttpVerb: Get
+    - Route: list
+    - return type: IEnumerable of BalanceSheetListItemDto
+    - Query string parameter: count (int)
+    - Body: Calls IBusinessLogic's GetBalanceSheetList method
+- GetNetWorthChart
+    - HttpVerb: Get
+    - Route: net-worth-chart
+    - return type: IEnumerable of NetWorthChartDto
+    - Query string parameter: count (int)
+    - Body: Calls IBusinessLogic's GetNetWorthChart method
+- GetDetails
+    - HttpVerb: Get
+    - Route: details/{balanceSheetId:int}
+    - return type: DetailsDto
+    - Parameter: balanceSheetId (int), from route
+    - Body: Calls IBusinessLogic's GetDetails method
+- Create
+    - HttpVerb: Get
+    - Route: create
+    - return type: BalanceSheetGetCreateDto
+    - Body: Calls IBusinessLogic's GetBalanceSheetForCreate method
+- Create
+    - HttpVerb: Post
+    - Route: create
+    - return type: int
+    - Parameter: BalanceSheetCreateDto, from HTTP request body
+    - Body: Calls IBusinessLogic's CreateBalanceSheet method
+- Edit
+    - HttpVerb: Get
+    - Route: edit/{balanceSheetId:int}
+    - return type: BalanceSheetGetEditDto
+    - Parameter: balanceSheetId (int), from route
+    - Body: Calls IBusinessLogic's GetBalanceSheetForEdit method
+- Edit
+    - HttpVerb: Put
+    - Route: edit/{balanceSheetId:int}
+    - return type: bool
+    - Parameter: BalanceSheetEditDto, from HTTP request body
+    - Body: Calls IBusinessLogic's EditBalanceSheet method  

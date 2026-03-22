@@ -1,0 +1,53 @@
+- User:
+    - UserId int
+    - UserName string
+    - Email string
+    - PasswordHash string
+- BalanceSheetListItem:
+    - BalanceSheetId int
+    - Date DateTime
+- Target:
+    - TargetId int
+    - UserId int
+    - AssetTypeId int
+    - Percentage decimal
+- LiabilityChartItem:
+    - TotalLiabilities decimal
+    - Date DateTime
+- NetWorthChartItem:
+    - NetWorth decimal
+    - Date DateTime
+- AssetType:
+    - AssetTypeId int
+    - AssetTypeName string
+- BalanceSheet:
+    - BalanceSheetId int
+    - UserId int
+    - Date DateTime
+    - Assets IEnumerable<Asset>
+    - Bullion IEnumerable<MetalPosition>
+    - Liabilities IEnumerable<Liability>
+- Asset:
+    - AssetId int
+    - BalanceSheetId int
+    - IsPercent bit 
+    - AssetPortions IEnumerable<AssetPortion>
+- AssetPortion:
+    - AssetPortionId int
+    - AssetId int
+    - AssetTypeId int
+    - AssetPortionValue decimal
+- Liability:
+    - LiabilityId int
+    - BalanceSheetId int
+    - LiabilityName string
+    - LiabilityValue decimal
+- PreciousMetal:
+    - PreciousMetalId int
+    - PreciousMetalName string
+- MetalPosition:
+    - MetalPositionId int
+    - BalanceSheetId int
+    - PreciousMetalId int
+    - NumberOfOunces decimal
+    - PricePerOunce decimal
