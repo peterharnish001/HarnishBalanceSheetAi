@@ -55,3 +55,8 @@
     - BalanceSheet BalanceSheet
     - AssetTypes ICollection<AssetType>
     - PreciousMetals ICollection<PrecionsMetal>
+    - Targets ICollection<Target>
+- PreciousMetalPrice:
+    - PreciousMetalId int
+    - MetalName string
+    - Price decimal

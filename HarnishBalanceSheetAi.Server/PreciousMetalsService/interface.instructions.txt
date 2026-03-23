@@ -1,0 +1,2 @@
+Create an Interface IPreciousMetalsService. It should have 1 method that will return a type of Task<IEnumerable<PreciousMetalPrice>>.
+The name of the method will be GetPreciousMetalsPrices. The method will take a parameter of IEnumerable<PreciousMetalPrice>.
