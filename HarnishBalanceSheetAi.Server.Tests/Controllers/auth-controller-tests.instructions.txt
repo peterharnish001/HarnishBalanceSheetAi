@@ -1,0 +1,13 @@
+Create a test class called AuthControllerTests. It should test the HarnishBalanceSheetAi.Server.Controllers.AuthController class. Use Moq
+to mock up the injected interfaces. Write 3 tests for the Login method. LoginRequest parameters should have dummy data.
+- First test:
+    - Use BCrypt.Net.BCrypt.HashPassword method to hash the password input with the LoginRequest parameter. The IRepository mock should
+    return a User object with PasswordHash equal to the hashed password.
+    - Expected result: Ok response with a JsonResult containing a JwtSecurityToken.
+- Second test:
+    - The IRepository mock should return null for the User object.
+    - Expected result: 401 response
+- Third test:
+    - Use BCrypt.Net.BCrypt.HashPassword method but hash a different string than what was provided in the LoginRequest password. The
+    IRepository mock should return a User object with PasswordHash equal to the hashed password.
+    - Expected result: 401 response

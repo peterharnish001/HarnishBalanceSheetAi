@@ -3,5 +3,6 @@
     <Build />
     <Deploy />
   </Project>
+  <Project Path="HarnishBalanceSheetAi.Server.Tests/HarnishBalanceSheetAi.Server.Tests.csproj" Id="380b4965-e1e1-42d8-a967-e15c16acf5dc" />
   <Project Path="HarnishBalanceSheetAi.Server/HarnishBalanceSheetAi.Server.csproj" />
 </Solution>
