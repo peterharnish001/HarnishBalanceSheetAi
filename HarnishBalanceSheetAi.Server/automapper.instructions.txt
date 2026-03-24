@@ -1,0 +1,34 @@
+Add a MappingProfile class for AutoMapper. It should extend AutoMapper.Profile. In Program.cs, add AutoMapper as a service, adding the
+MappingProfile class as a Profile to the service configuration. Create the following mappings:
+AssetType to AssetTypeDto
+BalanceSheetListItem to BalanceSheetListItemDto
+LiabilityChartItem to LiabilityChartDto
+NetworthChartItem to NetworthChartDto
+AssetPortion to AssetPortionDto
+Asset to AssetDetailDto
+MetalPosition to MetalPositionDetailDto
+Liability to LiabilityDetailDto
+Details to DetailsDto. Map the Details.BalanceSheet property to properties on the DetailsDto class.
+AssetPortion to AssetPortionGetCreateDto
+Asset to AssetGetCreateDto 
+MetalPosition to MetalPositionGetCreateDto 
+Liability to LiabilityGetCreateDto
+BalanceSheet to BalanceSheetGetCreateDto
+AssetType to AssetTypeGetCreateDto
+AssetPortion to AssetPortionGetEditDto
+Asset to AssetGetEditDto 
+MetalPosition to MetalPositionGetEditDto 
+Liability to LiabilityGetEditDto
+BalanceSheet to BalanceSheetGetEditDto
+AssetType to AssetTypeGetEditDto
+TargetSaveDto to Target 
+AssetPortionCreateDto to AssetPortion 
+AssetCreateDto to Asset 
+MetalPositionCreateDto to MetalPosition 
+LiabilityCreateDto to Liability
+BalanceSheetCreateDto to BalanceSheet
+AssetPortionEditDto to AssetPortion 
+AssetEditDto to Asset 
+MetalPositionEditDto to MetalPosition 
+LiabilityEditDto to Liability
+BalanceSheetEditDto to BalanceSheet
